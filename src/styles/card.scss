@@ -1,0 +1,40 @@
+$contrast-color: orange;
+
+.card {
+    height: 400px;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  }
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    padding: 0 10px 0 10px;
+    position: relative;
+    
+    h3 {
+        color: orange;
+        margin-bottom: 10px;
+    }
+
+    button {
+        position: absolute;
+        left: 10px;
+        bottom: 15px;
+        color: orange;
+        width: fit-content;
+    }
+}
+
+.img-container {
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+    }
+}
