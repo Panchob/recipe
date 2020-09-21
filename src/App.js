@@ -21,12 +21,12 @@ export default class App extends Component {
       fetch(url)
         .then((response) => response.json())
         .then((data) => this.setState({recipes: data.results}))
-        .then(() => console.log(this.state.recipes))
     } else {
       alert("Please enter a recipe.")
     }
 
   }
+
 
   render() {
     return (

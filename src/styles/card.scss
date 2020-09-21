@@ -1,4 +1,4 @@
-$contrast-color: orange;
+$contrast-color: rgb(136, 104, 44);
 
 .card {
     height: 400px;
@@ -21,8 +21,17 @@ $contrast-color: orange;
         position: absolute;
         left: 10px;
         bottom: 15px;
-        color: orange;
-        width: fit-content;
+        width: 130px;
+
+        &:hover{
+            background-color:blueviolet;
+            color: black
+        }
+
+        a{
+            text-decoration: none;
+            color: orange
+        }
     }
 }
 

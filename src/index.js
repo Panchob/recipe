@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import './styles/card.scss'
+import './styles/card.scss';
+import './styles/recipeDetails.scss'
 import Router from './Router';
 import * as serviceWorker from './serviceWorker';
 

@@ -7,15 +7,15 @@ export class RecipeDetails extends Component {
     constructor(props) {
         super();
         this.state = {
-            id:props.id,
+            //id:props.location.state.id,
             ingredients: {},
             instructions: {}
         }
     }
 
 
-    getRecipeIngredient = () => {
-        const url = `https://api.spoonacular.com/recipes/${this.state.id}/ingredientWidget&apiKey=${API_KEY}`;
+    getRecipeIngredients = () => {
+        const url = `https://api.spoonacular.com/recipes/${this.state.id}/ingredientWidget.json?apiKey=${API_KEY}`;
     
         fetch(url)
           .then((response) => response.json()
@@ -24,7 +24,7 @@ export class RecipeDetails extends Component {
       }
 
     getRecipeInstructions = () => {
-        const url = `https://api.spoonacular.com/recipes/${this.state.id}/analyzedInstructions&apiKey=${API_KEY}`;
+        const url = `https://api.spoonacular.com/recipes/${this.state.id}/analyzedInstructions?apiKey=${API_KEY}`;
 
         fetch(url)
         .then((response) => response.json()
@@ -32,11 +32,42 @@ export class RecipeDetails extends Component {
             instructions: data}))))
     }
 
+    componentDidMount() {
+        //this.getRecipeInstructions();
+        //this.getRecipeIngredients();
+    }
+
     render() {
+
         return (
-            <div>
-                
-            </div>
+        <div>
+          <header>
+            <strong>RECIPE SEARCH</strong>
+          </header>
+          <main className="recipe-details-container">
+              <section className="recipe-details">
+                  
+                    <div className="separator"></div>
+                    <h1>INGREDIENTS</h1>
+                    <ul>
+                        <li className="ingredient">2 cups of all purpose flour</li>
+                        <li className="ingredient">2 cups of all purpose flour</li>
+                        <li className="ingredient">2 cups of all purpose flour</li>
+                        <li className="ingredient">2 cups of all purpose flour</li>
+                    </ul>
+                    <div className="separator"></div>
+                    <h1>INSTRUCTIONS</h1>
+                    <ol>
+                        <li className="instruction">Adjust the oven rack to the lower third position and preheat the oven to 350°F (177°C). Grease a 9×5-inch loaf pan or coat with nonstick spray. Set aside.</li>
+                        <li className="instruction">Adjust the oven rack to the lower third position and preheat the oven to 350°F (177°C). Grease a 9×5-inch loaf pan or coat with nonstick spray. Set aside.</li>
+                        <li className="instruction">Adjust the oven rack to the lower third position and preheat the oven to 350°F (177°C). Grease a 9×5-inch loaf pan or coat with nonstick spray. Set aside.</li>
+                        <li className="instruction">Adjust the oven rack to the lower third position and preheat the oven to 350°F (177°C). Grease a 9×5-inch loaf pan or coat with nonstick spray. Set aside.</li>
+                    </ol>
+
+              </section>
+          </main>
+        </div>
+
         )
     }
 
